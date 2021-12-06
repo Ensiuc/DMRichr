@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">DMRichR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.7.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.7.3</span>
       </span>
     </div>
 
@@ -128,7 +128,11 @@
     <p>Performs and plots a PCA from individual smoothed methylation values</p>
     </div>
 
-    <pre class="usage"><span class='fu'>PCA</span><span class='op'>(</span>matrix <span class='op'>=</span> <span class='va'>matrix</span>, group <span class='op'>=</span> <span class='cn'>NA</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>PCA</span><span class='op'>(</span>
+  matrix <span class='op'>=</span> <span class='va'>matrix</span>,
+  testCovariate <span class='op'>=</span> <span class='va'>testCovariate</span>,
+  bs.filtered.bsseq <span class='op'>=</span> <span class='va'>bs.filtered.bsseq</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -138,8 +142,12 @@
       <td><p>A matrix of smoothed individual methylation values</p></td>
     </tr>
     <tr>
-      <th>group</th>
-      <td><p>Ordered factor vector of sample groupings</p></td>
+      <th>testCovariate</th>
+      <td><p>Factor of interest</p></td>
+    </tr>
+    <tr>
+      <th>bs.filtered.bsseq</th>
+      <td><p>Smoothed <code>bsseq</code> object with a testCovariate in <code>pData</code></p></td>
     </tr>
     </table>
 
